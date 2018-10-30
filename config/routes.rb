@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'users/index'
-  get 'users/show'
   root 'welcome#home'
 
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+  
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  #get 'users/index'
+  #get 'users/show'
   #get 'neighborhoods/index'
   #get 'neighborhoods/show'
   #get 'cuisines/index'
