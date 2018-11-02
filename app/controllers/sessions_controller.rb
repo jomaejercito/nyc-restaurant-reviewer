@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to login_path
     elsif @user && @user.try(:authenticate, params[:user][:password])
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to user_reviews_path(@user)
     else
       redirect_to login_path
     end
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
       u.password = 'password'
     end
     session[:user_id] = @user.id
-    redirect_to user_path(@user)
+    redirect_to user_reviews_path(@user)
   end
 
   private
