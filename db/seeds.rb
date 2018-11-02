@@ -55,3 +55,4 @@ Review.create(user_id: 2, restaurant_id: 3, rating: 3, comment: "Food was alrigh
 Review.create(user_id: 3, restaurant_id: 4, rating: 5, comment: "I loved it omg the food was soooo good. Chic crowd too. Obsessed.")
 Review.create(user_id: 4, restaurant_id: 5, rating: 5, comment: "Babbo has certainly proved to me why it is an iconic restaurant in New York City. The food was incredible.")
 Review.create(user_id: 5, restaurant_id: 6, rating: 4, comment: "I dined here for my best friend's birthday. I felt like the ambiance and service were excellent.")
+Review.create(user_id: 3, restaurant_id: 1, rating: 4, comment: "Food and ambiance was great. Didn't give a complete 5 stars because the food took a while.")
