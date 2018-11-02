@@ -1,2 +1,5 @@
-<h1>Cuisines#show</h1>
-<p>Find me in app/views/cuisines/show.html.erb</p>
+<h1><%= @cuisine.name %></h1>
+
+<% @cuisine.restaurants.each do |restaurant| %>
+  <%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+<% end %>
