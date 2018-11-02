@@ -1,2 +1,5 @@
-<h1>Neighborhoods#show</h1>
-<p>Find me in app/views/neighborhoods/show.html.erb</p>
+<h1><%= @neighborhood.name %></h1>
+
+<% @neighborhood.restaurants.each do |restaurant| %>
+  <%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+<% end %>
