@@ -3,6 +3,7 @@ class Restaurant < ApplicationRecord
   has_many :users, through: :reviews
   belongs_to :cuisine
   belongs_to :neighborhood
+  validates :name, presence: true, uniqueness: true
 
   def average_rating
     if self.reviews.count == 0
