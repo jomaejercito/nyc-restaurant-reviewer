@@ -1,5 +1,8 @@
 <h1><%= @restaurant.name %></h1>
+<h3>Cuisine: <%= @restaurant.cuisine.name %>
+<br>
 <h3>Address: <%= @restaurant.address %></h3>
+<h3>Neighborhood: <%= @restaurant.neighborhood.name %></h3>
 <br>
 <h4>Total Reviews: <%= @restaurant.reviews.count %><br></h4>
 <h4>Average Rating: <%= @restaurant.average_rating %><br></h4>
