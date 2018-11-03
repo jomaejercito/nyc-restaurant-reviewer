@@ -1,5 +1,28 @@
 <h1>Restaurants</h1>
 
-<% @restaurants.each do |restaurant| %>
+<!--<% @restaurants.each do |restaurant| %>
   <%= link_to restaurant.name, restaurant_path(restaurant) %> <br>
 <% end %>
+-->
+
+<table>
+  <thead>
+    <tr>
+      <th>Restaurant</th>
+      <th>Total Reviews</th>
+      <th>Average Rating</th>
+      <th>Cuisine</th>
+      <th>Neighborhood</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <td style="padding:0 15px 0 15px;"><%= link_to restaurant.name, restaurant_path(restaurant) %></td>
+      <td style="padding:0 15px 0 15px;"><%= restaurant.reviews.count %></td>
+      <td style="padding:0 15px 0 15px;"><%= restaurant.average_rating %></td>
+      <td style="padding:0 15px 0 15px;"><%= restaurant.cuisine.name %></td>
+      <td style="padding:0 15px 0 15px;"><%= restaurant.neighborhood.name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
