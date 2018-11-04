@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
+
   def index
+    @user = User.find_by(id: params[:user_id])
+    @reviews = @user.reviews.all
   end
 
   def new
@@ -10,4 +13,5 @@ class ReviewsController < ApplicationController
 
   def edit
   end
+
 end
