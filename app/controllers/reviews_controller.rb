@@ -9,6 +9,9 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @user = User.find_by(id: params[:user_id])
+    @review = Review.find(params[:id])
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def edit
