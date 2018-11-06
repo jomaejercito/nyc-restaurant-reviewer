@@ -1,25 +1,25 @@
 class ReviewsController < ApplicationController
 
   def index
-    @user = User.find_by(id: params[:user_id])
+    find_user
     @reviews = @user.reviews.all
   end
 
   def show
-    @user = User.find_by(id: params[:user_id])
-    @review = Review.find(params[:id])
-    @restaurant = Restaurant.find(params[:id])
+    find_user
+    set_restaurant
+    set_review
   end
 
   def new
-    @user = current_user
-    @restaurant = Restaurant.find_by(id: params[:restaurant_id])
+    set_user
+    find_restaurant
     @review = Review.new
   end
 
   def create
-    @user = current_user
-    @restaurant = Restaurant.find(params[:id])
+    set_user
+    find_restaurant
     @review = Review.new(review_params)
     if @review.save
       redirect_to user_reviews_path(@user)
@@ -29,11 +29,17 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @user = current_user
-    @review = Review.find(params[:id])
-    @restaurant = Restaurant.find(params[:id])
+    set_user
+    set_review
+    set_restaurant
   end
 
+  def destroy
+    set_user
+    set_review
+    @review.destroy
+    redirect_to user_reviews_path(@user)
+  end
 
   private
 
