@@ -34,6 +34,17 @@ class ReviewsController < ApplicationController
     set_restaurant
   end
 
+  def update
+    set_user
+    set_review
+    set_restaurant
+    if @review.update(review_params)
+      redirect_to user_reviews_path(@user)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     set_user
     set_review
