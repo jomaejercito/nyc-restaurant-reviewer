@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
   def create
     set_user
     find_restaurant
-    @review = Review.new(review_params)
+    @review = @user.reviews.build(review_params) ## new does not retain the object in memory like build.
     if @review.save
       redirect_to user_reviews_path(@user)
     else
