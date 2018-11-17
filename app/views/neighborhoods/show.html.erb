@@ -1,20 +1,21 @@
 <h1><%= @neighborhood.name %></h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Restaurant</th>
-      <th>Total Reviews</th>
-      <th>Average Rating</th>
-      <th>Cuisine</th>
+      <th scope="col">Restaurant</th>
+      <th scope="col">Total Reviews</th>
+      <th scope="col">Average Rating (out of 5 stars)</th>
+      <th scope="col">Cuisine</th>
     </tr>
   </thead>
   <tbody>
+    <tr class="table-secondary">
     <% @neighborhood.restaurants.each do |restaurant| %>
-      <td style="padding:0 15px 0 15px;"><%= link_to restaurant.name, restaurant_path(restaurant) %></td>
-      <td style="padding:0 15px 0 15px;"><%= restaurant.reviews.count %></td>
-      <td style="padding:0 15px 0 15px;"><%= restaurant.average_rating %></td>
-      <td style="padding:0 15px 0 15px;"><%= restaurant.cuisine.name %></td>
+      <td><%= link_to restaurant.name, restaurant_path(restaurant) %></td>
+      <td><%= restaurant.reviews.count %></td>
+      <td><%= restaurant.average_rating %></td>
+      <td><%= restaurant.cuisine.name %></td>
     </tr>
     <% end %>
   </tbody>
