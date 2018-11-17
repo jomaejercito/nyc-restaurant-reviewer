@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  resources :users do
+  resources :users, except: :show do
     resources :reviews
   end
 
