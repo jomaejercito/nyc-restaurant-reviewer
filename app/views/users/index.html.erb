@@ -1,5 +1,5 @@
 <h1>Reviewers</h1>
-
+<br><br><br>
 <% @users.each do |user| %>
-  <%= link_to user.name, user_reviews_path(user) %> <br>
+  <p class="lead"><%= link_to user.name, user_reviews_path(user) %></p>
 <% end %>
