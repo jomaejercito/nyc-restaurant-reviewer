@@ -1,5 +1,5 @@
 <h1>Cuisines</h1>
-
+<br><br><br>
 <% @cuisines.each do |cuisine| %>
-  <%= link_to cuisine.name, cuisine_path(cuisine) %> <br>
+  <p class="lead"><%= link_to cuisine.name, cuisine_path(cuisine) %></p>
 <% end %>

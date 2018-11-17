@@ -1,5 +1,5 @@
 <% if @user == current_user %>
-  <h1>My Restaurant Reviews</h1>
+  <h1>My Restaurant Reviews</h1><br>
 <% else %>
   <h1><%= @user.name %>'s Restaurant Reviews</h1>
 <% end %>
@@ -7,7 +7,7 @@
 <br>
 
 <% @reviews.each do |review| %>
-  <%= link_to review.restaurant.name, user_review_path(@user, review) %> <br>
+  <p class="lead"><%= link_to review.restaurant.name, user_review_path(@user, review) %> </p>
 <% end %>
 
 <br><br>

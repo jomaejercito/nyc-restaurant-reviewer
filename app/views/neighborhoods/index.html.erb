@@ -1,5 +1,5 @@
 <h1>Neighborhoods</h1>
-
+<br><br>
 <% @neighborhoods.each do |neighborhood| %>
-  <%= link_to neighborhood.name, neighborhood_path(neighborhood) %> <br>
+  <p class="lead"><%= link_to neighborhood.name, neighborhood_path(neighborhood) %></p>
 <% end %>
