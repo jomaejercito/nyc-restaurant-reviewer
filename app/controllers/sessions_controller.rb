@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
       u.email = auth['info']['email']
       u.password = 'password'
     end
+    @user.save
     session[:user_id] = @user.id
     redirect_to user_reviews_path(@user)
   end
