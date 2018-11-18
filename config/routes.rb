@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  get '/restaurants/highest_rated' => 'restaurants#highest_rated', as: :highest_rated
+
   resources :users, except: :show do
     resources :reviews
   end
