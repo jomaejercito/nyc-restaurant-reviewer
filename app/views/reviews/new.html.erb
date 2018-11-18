@@ -2,9 +2,9 @@
 <br><br>
   <%= form_for :review, url: user_reviews_path do |f| %>
     <div class="form-group">
-      <%= f.label :restaurant, "Choose Restaurant:" %> <br>
+      <legend><%= f.label :restaurant, "Choose Restaurant:" %></legend><br>
       <%= f.collection_select :restaurant_id, Restaurant.order('name ASC'), :id, :name, class: "form-control" %>
-    </div>
+    </div><br><br>
 
     <div class="form-group">
       <%= render partial: 'form', locals: {f: f} %>
