@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
-
+  before_action :require_login
+  
   def index
     @restaurants = Restaurant.order('name ASC')
   end
