@@ -1,14 +1,12 @@
 <h1>Add a Restaurant Review</h1>
 <br><br>
+<div class="form-group">
   <%= form_for :review, url: user_reviews_path do |f| %>
-    <div class="form-group">
-      <legend><%= f.label :restaurant, "Choose Restaurant:" %></legend><br>
+      <legend><%= f.label :restaurant, "Choose Restaurant" %></legend><br>
       <%= f.collection_select :restaurant_id, Restaurant.order('name ASC'), :id, :name, class: "form-control" %>
-    </div><br><br>
-
-    <div class="form-group">
+      <br><br><br>
       <%= render partial: 'form', locals: {f: f} %>
       <br><br><br>
-    </div>
       <%= f.submit "Create Review", class: "btn btn-outline-secondary" %>
   <% end %>
+</div>
