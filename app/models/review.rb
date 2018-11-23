@@ -5,6 +5,5 @@ class Review < ApplicationRecord
   validates :restaurant, presence: true
   validates :rating, presence: true
   validates :comment, presence: true
-  validates_uniqueness_of :restaurant_id
 
 end
