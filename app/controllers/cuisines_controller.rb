@@ -1,4 +1,5 @@
 class CuisinesController < ApplicationController
+  before_action :require_login
 
   def index
     @cuisines = Cuisine.order('name ASC')
