@@ -18,3 +18,16 @@
       <%= submit_tag "Create Account", class: "btn btn-outline-secondary"%>
     <% end %>
   </div>
+
+
+  <div class="errors">
+    <% if @user.errors.any? %>
+      <br><br>
+      <h3>Errors:</h3>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
