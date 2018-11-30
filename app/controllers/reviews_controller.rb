@@ -10,6 +10,13 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @current_user ||= User.find_by(id: session[:user_id])
+    @params_user = User.find_by(id: params[:user_id])
+    @review = Review.find(params[:id])
+    @params_review = Review.find_by(id: params[:id])
+    if @current_user != @params_user || @review.user_id != @current_user.id
+      redirect_to user_reviews_path(@user)
+    end
   end
 
   def new
