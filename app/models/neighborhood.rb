@@ -1,3 +1,3 @@
 class Neighborhood < ApplicationRecord
-  has_many :restaurants  
+  has_many :restaurants
 end

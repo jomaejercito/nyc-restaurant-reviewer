@@ -11,7 +11,7 @@
   </thead>
   <tbody>
     <tr class="table-secondary">
-    <% @cuisine.restaurants.each do |restaurant| %>
+    <% @cuisine.restaurants.sort_by(&:name).each do |restaurant| %>
       <td><%= link_to restaurant.name, restaurant_path(restaurant) %></td>
       <td><%= restaurant.reviews.count %></td>
       <td><%= restaurant.average_rating %></td>
