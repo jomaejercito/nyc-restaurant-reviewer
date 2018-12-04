@@ -1,4 +1,4 @@
-# RewardsCreditCard
+# NYC Restaurant Reviewer
 
 Welcome to NYC Restaurant Reviewer! This is an application that allows users to review restaurants located in NYC and see other user's reviews.
 
