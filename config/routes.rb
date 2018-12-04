@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   get '/restaurants/highest_rated' => 'restaurants#highest_rated', as: :highest_rated
+  get '/restaurants/lowest_rated' => 'restaurants#lowest_rated', as: :lowest_rated
   get '/restaurants/popular' => 'restaurants#popular', as: :popular
 
   resources :users, except: :show do

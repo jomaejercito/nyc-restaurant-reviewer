@@ -6,6 +6,7 @@ class Restaurant < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   scope :highest_rated, -> {joins(:reviews).merge(Review.group(:restaurant_id).order('AVG(rating) DESC').limit(5))}
+  scope :lowest_rated, -> {joins(:reviews).merge(Review.group(:restaurant_id).order('AVG(rating) ASC').limit(5))}
   scope :popular, -> {joins(:reviews).merge(Review.group(:restaurant_id).order('COUNT(reviews.restaurant_id) DESC').limit(5))}
 
   def average_rating
