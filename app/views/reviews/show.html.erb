@@ -1,14 +1,20 @@
-<% if @user == current_user %>
-  <h1>My Review of <%= @review.restaurant.name %></h1><br>
-<% else %>
-  <h1><%= @user.name %>'s Review of <%= @review.restaurant.name %></h1><br>
-<% end %>
-<p class="lead"><%= @review.comment %></p>
-<p class="lead"><%= @review.rating %>/5</p>
+<div id="title" class="title">
+  <% if @user == current_user %>
+    <h1 class="reviewRestaurant">My Review of <%= @review.restaurant.name %></h1><br>
+  <% else %>
+    <h1 class="reviewRestaurant"><%= @user.name %>'s Review of <%= @review.restaurant.name %></h1><br>
+  <% end %>
+</div>
 
+<div id="attr">
+  <p class="reviewComment lead"><%= @review.comment %></p>
+  <p class="reviewRating lead"><%= @review.rating %>/5</p>
 <br>
+</div>
 
-<% if @user == current_user %>
-  <%= link_to "Edit Review", edit_user_review_url, class: "btn btn-outline-warning" %>
-  <%= link_to "Delete Review", user_review_path, class: "btn btn-outline-danger", :method => 'delete' %>
-<% end %>
+<div class="buttons">
+  <% if @user == current_user %>
+    <%= link_to "Edit Review", edit_user_review_url, class: "editReview btn btn-outline-warning" %>
+    <%= link_to "Delete Review", user_review_path, class: "deleteReview btn btn-outline-danger", :method => 'delete' %>
+  <% end %>
+</div>
