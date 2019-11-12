@@ -2,6 +2,8 @@
 
 Welcome to NYC Restaurant Reviewer! This is an application that allows users to review restaurants located in NYC and see other user's reviews.
 
+Demo: https://youtu.be/14gH_583fh0
+
 ## Installation
 * Clone the repository into your computer
 * cd into the nyc-restaurant-reviewer directory
